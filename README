@@ -1,0 +1,15 @@
+INTRODUCTION
+============
+
+LuaExceptions is a library that provides higher level functions to handle
+exceptions in lua. It uses native lua functions pcall and error.
+It's approach is to provide a similar interface to exception mechanisms
+that are native in such languages as Java and C++.
+LuaException uses try-catch-finally statements.
+
+TODO
+===
+
+[ ] Print stack trace, when exception is rethrown in finally.
+[ ] Multiple inheritance for exception classes.
+
