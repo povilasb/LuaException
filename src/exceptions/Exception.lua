@@ -2,30 +2,28 @@
 -- This is a base exception meant to be inherited by other exceptions.
 ---
 
+local LuaClass = require "LuaClass"
 
-local Exception = {}
 
--- used by __tostring()
+-- PRIVATE
+
+local Exception = LuaClass:create()
 Exception._name = "Exception"
-Exception.errorLevel = 2
+
+
+-- PUBLIC
 
 
 ---
--- Exception constructor that takes a single parameter: exception message
--- and saves it inside object.
+-- Constructor.
 --
--- @param {string} msg error message that is printed when Exception is passed
---	as an argument to __tostring().
+-- @param {string} message error message that is printed when Exception is
+--	passed as an argument to __tostring().
 -- @return {table} new Exception object.
 ---
-function Exception:create(msg)
-	local retval = {}
-	setmetatable(retval, self)
-	self.__index = self
-
-	retval.msg = msg or ""
-
-	return retval
+function Exception:_init(message)
+	self.errorLevel = 2
+	self.message = message
 end
 
 
@@ -35,7 +33,7 @@ end
 -- @return string exception string.
 ---
 function Exception:__tostring()
-	return self._name .. ": " .. tostring(self.msg)
+	return self._name .. ": " .. tostring(self.message)
 end
 
 

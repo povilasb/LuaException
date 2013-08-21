@@ -14,7 +14,7 @@ local error = LuaException:create()
 
 error:try(function()
 	print("Nex statement is error.")
-	error:throw(Exception:create("sample exception."))
+	error:throw(Exception:new("sample exception."))
 end)
 error:catch(Exception, function(e)
 	print("Exception cought: " .. tostring(e))
