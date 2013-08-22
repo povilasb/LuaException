@@ -1,6 +1,6 @@
 ---
 -- This sample demonstrates the basic usage of LuaExceptions library.
--- In this sample to exceptions are thrown: one is cought, the other one is
+-- In this sample two exceptions are thrown: one is cought, the other one is
 -- not.
 ---
 
@@ -16,7 +16,7 @@ local error = LuaException:create()
 
 error:try(function()
 	print("Next statement is error.")
-	error:throw(Exception:create("sample exception."))
+	error:throw(Exception:new("sample exception."))
 end)
 error:catch(Exception, function(e)
 	print("Exception cought: " .. tostring(e))
@@ -27,7 +27,7 @@ end)
 
 error:try(function()
 	print("Next statement is error.")
-	error:throw(Exception:create("uncought exception example."))
+	error:throw(Exception:new("uncought exception example."))
 end)
 -- This time finally rethrows uncought error.
 error:finally(function()
