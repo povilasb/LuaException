@@ -7,6 +7,18 @@ It's approach is to provide a similar interface to exception mechanisms
 that are native in such languages as Java and C++.
 LuaException uses try-catch-finally statements.
 
+
+GETTING STARTED
+==============
+1. You must initialize LuaClass submodule with:
+git submodule init
+git submodule update
+
+2. Run "make" to get a list of samples.
+
+3. "make sample-name" to run a sample.
+
+
 TODO
 ===
 
