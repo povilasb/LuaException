@@ -1,0 +1,3 @@
+[submodule "LuaClass"]
+	path = LuaClass
+	url = git@github.com:povilasb/LuaClass.git
