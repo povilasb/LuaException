@@ -11,5 +11,4 @@ TODO
 ===
 
 [ ] Print stack trace, when exception is rethrown in finally.
-[ ] Multiple inheritance for exception classes.
 
