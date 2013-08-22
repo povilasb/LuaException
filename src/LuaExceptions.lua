@@ -5,6 +5,8 @@
 -- LuaException uses try-catch-finally statements.
 ---
 
+local Exception = require "exceptions.Exception"
+
 
 -- PRIVATE
 
@@ -75,12 +77,12 @@ function LuaExceptions:catch(exception, f, ...)
 	end
 
 	if type(self.originalError) ~= "table" or
-		self.originalError.errorLevel == nil then
+		self.originalError:inheritsFrom(Exception) == false then
 		-- rethrow the error that is not Exception object
 		error("Standard error occured: " .. tostring(exception), 2)
 	end
 
-	if self.originalError._name == exception._name then
+	if self.originalError:inheritsFrom(exception) then
 		self.errorCought = true
 		f(self.originalError, ...)
 	end
