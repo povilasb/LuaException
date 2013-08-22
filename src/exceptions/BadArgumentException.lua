@@ -12,8 +12,8 @@ local Exception = require "exceptions.Exception"
 -- PRIVATE
 
 
-local BadArgumentException = LuaClass:create(Exception)
-BadArgumentException._name = "BadArgumentException"
+local BadArgumentException = LuaClass:create("BadArgumentException", Exception)
+BadArgumentException.__tostring = BadArgumentException._super.__tostring
 
 
 -- PUBLIC
@@ -27,9 +27,9 @@ BadArgumentException._name = "BadArgumentException"
 -- @return {table} new Exception object.
 ---
 function BadArgumentException:_init(message)
-	self.super._init(self, message)
+	BadArgumentException._super._init(self, message)
 	self.errorLevel = 3
 end
 
 
-return Exception
+return BadArgumentException

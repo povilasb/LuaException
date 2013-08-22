@@ -7,8 +7,7 @@ local LuaClass = require "LuaClass"
 
 -- PRIVATE
 
-local Exception = LuaClass:create()
-Exception._name = "Exception"
+local Exception = LuaClass:create("Exception")
 
 
 -- PUBLIC
