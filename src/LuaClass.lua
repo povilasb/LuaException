@@ -1,1 +1,1 @@
-../../LuaClass/src/LuaClass.lua
+../LuaClass/src/LuaClass.lua
