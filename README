@@ -9,7 +9,8 @@ LuaException uses try-catch-finally statements.
 
 
 GETTING STARTED
-==============
+===============
+
 1. You must initialize LuaClass submodule with:
 git submodule init
 git submodule update
@@ -20,7 +21,7 @@ git submodule update
 
 
 TODO
-===
+====
 
 [ ] Print stack trace, when exception is rethrown in finally.
 
